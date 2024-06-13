@@ -14,7 +14,9 @@ GraphQL practicing project to show pokemons data
 - MVI archeticture (Repository Pattern) 
 - Apollo
 - Compose
-
+- Flows 
+- Dagger Hilt 
+- Coroutines
 
 
 
