@@ -1,5 +1,6 @@
 package com.example.grapgqlapplication.presentation.components
 
+import androidx.compose.material3.Surface
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -22,20 +23,26 @@ fun PokemonDialog(pokemon: Pokemon, onItemClick: (PokemonIntent) -> Unit){
         onItemClick(PokemonIntent.ClearPokemon)
     },) {
 
-        Card(modifier = Modifier.background(Color.White),
-            shape = RoundedCornerShape(16.dp)
-        ) {
-            Column(
-                Modifier.padding(10.dp),
+        Surface(shape = RoundedCornerShape(16.dp),
             ) {
+            Card(
+                modifier = Modifier.background(Color.White),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Column(
+                    Modifier.padding(10.dp),
+                ) {
 
-                Text(text = pokemon.name+" Details", modifier = Modifier.padding(5.dp),
-                    fontWeight = FontWeight.Bold)
+                    Text(
+                        text = pokemon.name + " Details", modifier = Modifier.padding(5.dp),
+                        fontWeight = FontWeight.Bold
+                    )
 
-                DataList(pokemon.abilities,"Abilities")
+                    DataList(pokemon.abilities, "Abilities")
 
-                DataList(pokemon.moves,"Moves")
+                    DataList(pokemon.moves, "Moves")
 
+                }
             }
         }
     }
